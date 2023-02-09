@@ -20,6 +20,7 @@ namespace Lab2_Jai_leaFranson
         private void LoadPicture(object sender, EventArgs e)
         {
             pictureDialog = new OpenFileDialog();
+            pictureDialog = new OpenFileDialog();
             pictureDialog.Filter = ".bmp|*.bmp;|.jpg|*.jpg;*.jpeg;|.png|*.png;|All Files|*.*";
 
             if (pictureDialog.ShowDialog() == DialogResult.OK)
@@ -112,26 +113,57 @@ namespace Lab2_Jai_leaFranson
             {
                 for(int y =0; y < pictureToModify.Height; y++)
                 {
-                   
-                    if (contrastRadio.Checked)
-                    pictureToModify.SetPixel(x, y, ContrastAdjuster(pictureToModify.GetPixel(x,y)));
-                  
-                    else if(bwRadio.Checked)
-                    pictureToModify.SetPixel(x, y, BlackAndWhiteAdjuster(pictureToModify.GetPixel(x, y)));
-                  
-                    else if(tintRadio.Checked)
-                        pictureToModify.SetPixel(x, y, TintAdjuster(pictureToModify.GetPixel(x, y)));
+
+                    if (bwRadio.Checked)
+                        pictureToModify.SetPixel(x, y, BlackAndWhiteAdjuster(pictureToModify.GetPixel(x, y)));
                  
+                    else if (addColorRadio.Checked)
+                        pictureToModify.SetPixel(x, y, ColourAdjuster(pictureToModify.GetPixel(x, y)));
+                        
+                    else if (negativeRadio.Checked)
+                        pictureToModify.SetPixel(x, y, NegativeAdjuster(pictureToModify.GetPixel(x, y)));
+                        
                     else if (noiseRadio.Checked)
                         pictureToModify.SetPixel(x, y, NoiseAdjuster(pictureToModify.GetPixel(x, y), random));
                     
-                    else if(scrambleRadio.Checked)
+                    else if(colorEvenerRadio.Checked)
+                        pictureToModify.SetPixel(x, y, ColourEvener(pictureToModify.GetPixel(x, y)));
+                    
+                    else if(pixelRadio.Checked)
+                        pictureToModify.SetPixel(x, y, Pixelizer(pictureToModify.GetPixel(x, y)));
+                   
+                    else if (scrambleRadio.Checked)
                         pictureToModify.SetPixel(x, y, ScrambleAdjuster(pictureToModify.GetPixel(x, y), random));
 
-                    else if(negativeRadio.Checked)
-                        pictureToModify.SetPixel(x, y, NegativeAdjuster(pictureToModify.GetPixel(x, y)));
-                    else if(colorRadio.Checked)
-                        pictureToModify.SetPixel(x, y, ColourAdjuster(pictureToModify.GetPixel(x, y)));
+                    else if(brightnessRadio.Checked)
+                        pictureToModify.SetPixel(x, y, BrightnessAdjuster(pictureToModify.GetPixel(x, y)));
+
+                    else if(colorFinderRadio.Checked)
+                        pictureToModify.SetPixel(x, y, ColourFinder(pictureToModify.GetPixel(x, y)));
+
+                    else if (tintRadio.Checked)
+                        pictureToModify.SetPixel(x, y, TintAdjuster(pictureToModify.GetPixel(x, y)));
+
+                    else if(RCtintRadio.Checked)
+                        pictureToModify.SetPixel(x, y, RedCyanTintAdjuster(pictureToModify.GetPixel(x, y)));
+
+                    else if (GMtintRadio.Checked)
+                        pictureToModify.SetPixel(x, y, GreenMagentaTintAdjuster(pictureToModify.GetPixel(x, y)));
+                   
+                    else if (BYtintRadio.Checked)
+                        pictureToModify.SetPixel(x, y, BlueYellowTintAdjuster(pictureToModify.GetPixel(x, y)));
+
+                    else if (contrastRadio.Checked)
+                        pictureToModify.SetPixel(x, y, ContrastAdjuster(pictureToModify.GetPixel(x, y)));
+
+                    else if(RCcontrastRadio.Checked)
+                        pictureToModify.SetPixel(x, y, RedCyanContrastAdjuster(pictureToModify.GetPixel(x, y)));
+
+                    else if (GMcontrastRadio.Checked)
+                        pictureToModify.SetPixel(x, y, GreenMagentaContrastAdjuster(pictureToModify.GetPixel(x, y)));
+
+                    else if (BYcontrastRadio.Checked)
+                        pictureToModify.SetPixel(x, y, BlueYellowContrastAdjuster(pictureToModify.GetPixel(x, y)));
 
 
                     loopCounter++;
@@ -318,11 +350,25 @@ namespace Lab2_Jai_leaFranson
         /*************************************************************
             5. Colour Evener
          ************************************************************/
+        private Color ColourEvener(Color currentPixel)
+        {
+            int typeChange = modificationSlider.Value;
+            int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
 
+            currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
+            return currentPixel;
+        }
         /*************************************************************
             6. Pixelizer
          ************************************************************/
+        private Color Pixelizer(Color currentPixel)
+        {
+            int typeChange = modificationSlider.Value;
+            int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
 
+            currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
+            return currentPixel;
+        }
         /*************************************************************
             7. Scrambler Adjuster
          ************************************************************/
@@ -350,10 +396,26 @@ namespace Lab2_Jai_leaFranson
         /*************************************************************
             8. Brightness Adjuster
          ************************************************************/
+        private Color BrightnessAdjuster(Color currentPixel)
+        {
+            int typeChange = modificationSlider.Value;
+            int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
+
+            currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
+            return currentPixel;
+        }
 
         /*************************************************************
             9. Colour Finder
          ************************************************************/
+        private Color ColourFinder(Color currentPixel)
+        {
+            int typeChange = modificationSlider.Value;
+            int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
+
+            currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
+            return currentPixel;
+        }
 
         /*************************************************************
             10. Trad Tint
@@ -550,7 +612,14 @@ namespace Lab2_Jai_leaFranson
         /*************************************************************
             15. Contrast Reverser
          ************************************************************/
+        private Color ContrastReverser(Color currentPixel)
+        {
+            int typeChange = modificationSlider.Value;
+            int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
 
+            currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
+            return currentPixel;
+        }
 
         /*************************************************************
             16. Red - Cyan Contrast Adjuster
