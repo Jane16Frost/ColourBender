@@ -76,6 +76,42 @@ namespace Lab2_Jai_leaFranson
                 else
                     trackValue.Text = "0";
             }
+            else if(RCtintRadio.Checked)
+            {
+                smallSlideLabel.Text = "Red";
+                bigSlideLabel.Text = "Cyan";
+
+                if (modificationSlider.Value > 50)
+                    trackValue.Text = $"To cyan: {modificationSlider.Value - 50}";
+                else if (modificationSlider.Value < 50)
+                    trackValue.Text = $"To red: {50 - modificationSlider.Value}";
+                else
+                    trackValue.Text = "0";
+            }
+            else if (GMtintRadio.Checked)
+            {
+                smallSlideLabel.Text = "Green";
+                bigSlideLabel.Text = "Magenta";
+
+                if (modificationSlider.Value > 50)
+                    trackValue.Text = $"To Magenta: {modificationSlider.Value - 50}";
+                else if (modificationSlider.Value < 50)
+                    trackValue.Text = $"To Green: {50 - modificationSlider.Value}";
+                else
+                    trackValue.Text = "0";
+            }
+            else if (BYtintRadio.Checked)
+            {
+                smallSlideLabel.Text = "Blue";
+                bigSlideLabel.Text = "Yellow";
+
+                if (modificationSlider.Value > 50)
+                    trackValue.Text = $"To yellow: {modificationSlider.Value - 50}";
+                else if (modificationSlider.Value < 50)
+                    trackValue.Text = $"To blue: {50 - modificationSlider.Value}";
+                else
+                    trackValue.Text = "0";
+            }
             else if(scrambleRadio.Checked)
             {
                 smallSlideLabel.Text = "Left Shift";
@@ -85,6 +121,50 @@ namespace Lab2_Jai_leaFranson
                     trackValue.Text = $"Shifting {(modificationSlider.Value-50) * 2}% Right";
                 else if (modificationSlider.Value <= 50)
                     trackValue.Text = $"Shifting {(50 - modificationSlider.Value) * 2}% Left";
+            }
+            else if(colorFinderRadio.Checked)
+            {
+                if (modificationSlider.Value == 0)
+                    modificationSlider.Value = 1;
+
+                smallSlideLabel.Text = "Red";
+                bigSlideLabel.Text = "Purple";
+
+                int colorToFind = (int)Math.Ceiling(modificationSlider.Value * 6 / 100.0);
+                switch (colorToFind)
+                {
+                    case 1:
+                        trackValue.Text = "Red";
+                        break;
+                    case 2:
+                        trackValue.Text = "Yellow";
+                        break;
+                    case 3:
+                        trackValue.Text = "Green";
+                        break;
+                    case 4:
+                        trackValue.Text = "Cyan";
+                        break;
+                    case 5:
+                        trackValue.Text = "Blue";
+                        break;
+                    case 6:
+                        trackValue.Text = "Magenta";
+                        break;
+
+                    default:
+                        trackValue.Text = "Err";
+                        break;
+                }
+            }
+            else if(pixelRadio.Checked)
+            {
+                smallSlideLabel.Text = "Small";
+                bigSlideLabel.Text = "Big";
+                trackValue.Text = modificationSlider.Value.ToString();
+                if (modificationSlider.Value == 0)
+                    modificationSlider.Value = 1;
+
             }
             else
             {
@@ -116,47 +196,52 @@ namespace Lab2_Jai_leaFranson
 
                     if (bwRadio.Checked)
                         pictureToModify.SetPixel(x, y, BlackAndWhiteAdjuster(pictureToModify.GetPixel(x, y)));
-                 
+
                     else if (addColorRadio.Checked)
                         pictureToModify.SetPixel(x, y, ColourAdjuster(pictureToModify.GetPixel(x, y)));
-                        
+
                     else if (negativeRadio.Checked)
                         pictureToModify.SetPixel(x, y, NegativeAdjuster(pictureToModify.GetPixel(x, y)));
-                        
+
                     else if (noiseRadio.Checked)
                         pictureToModify.SetPixel(x, y, NoiseAdjuster(pictureToModify.GetPixel(x, y), random));
-                    
-                    else if(colorEvenerRadio.Checked)
+
+                    else if (colorEvenerRadio.Checked)
                         pictureToModify.SetPixel(x, y, ColourEvener(pictureToModify.GetPixel(x, y)));
-                    
-                    else if(pixelRadio.Checked)
-                        pictureToModify.SetPixel(x, y, Pixelizer(pictureToModify.GetPixel(x, y)));
-                   
+
+                    else if (pixelRadio.Checked)
+                    {
+                        Pixelizer(x, y, ref pictureToModify);
+                        y += modificationSlider.Value - 1;
+                    }
                     else if (scrambleRadio.Checked)
                         pictureToModify.SetPixel(x, y, ScrambleAdjuster(pictureToModify.GetPixel(x, y), random));
 
-                    else if(brightnessRadio.Checked)
+                    else if (brightnessRadio.Checked)
                         pictureToModify.SetPixel(x, y, BrightnessAdjuster(pictureToModify.GetPixel(x, y)));
 
-                    else if(colorFinderRadio.Checked)
+                    else if (colorFinderRadio.Checked)
                         pictureToModify.SetPixel(x, y, ColourFinder(pictureToModify.GetPixel(x, y)));
 
                     else if (tintRadio.Checked)
                         pictureToModify.SetPixel(x, y, TintAdjuster(pictureToModify.GetPixel(x, y)));
 
-                    else if(RCtintRadio.Checked)
+                    else if (RCtintRadio.Checked)
                         pictureToModify.SetPixel(x, y, RedCyanTintAdjuster(pictureToModify.GetPixel(x, y)));
 
                     else if (GMtintRadio.Checked)
                         pictureToModify.SetPixel(x, y, GreenMagentaTintAdjuster(pictureToModify.GetPixel(x, y)));
-                   
+
                     else if (BYtintRadio.Checked)
                         pictureToModify.SetPixel(x, y, BlueYellowTintAdjuster(pictureToModify.GetPixel(x, y)));
 
                     else if (contrastRadio.Checked)
                         pictureToModify.SetPixel(x, y, ContrastAdjuster(pictureToModify.GetPixel(x, y)));
 
-                    else if(RCcontrastRadio.Checked)
+                    else if (contrastRevRadio.Checked)
+                        pictureToModify.SetPixel(x, y, ContrastReverser(pictureToModify.GetPixel(x, y)));
+
+                    else if (RCcontrastRadio.Checked)
                         pictureToModify.SetPixel(x, y, RedCyanContrastAdjuster(pictureToModify.GetPixel(x, y)));
 
                     else if (GMcontrastRadio.Checked)
@@ -167,12 +252,25 @@ namespace Lab2_Jai_leaFranson
 
 
                     loopCounter++;
+
+                    if(pixelRadio.Checked)
+                    {
+                        if (loopCounter > (maxSize / modificationSlider.Value / modificationSlider.Value))
+                            loopCounter = (maxSize / modificationSlider.Value / modificationSlider.Value);
+                        progressBar.Value = (int)(loopCounter / (maxSize / modificationSlider.Value/ modificationSlider.Value) * 100);
+                    }
+                    else
                     progressBar.Value = (int)(loopCounter / maxSize * 100);
                 }
-
+                    if (pixelRadio.Checked)
+                    {
+                         x += modificationSlider.Value - 1;
+                        
+                        // loopCounter *= modificationSlider.Value;
+                    }
             }
             pictureBox.Image = pictureToModify;
-                
+            progressBar.Value = 0;
         }
 
         private double GetHue(int[] rgb)
@@ -276,13 +374,48 @@ namespace Lab2_Jai_leaFranson
          ************************************************************/
         private Color ColourAdjuster(Color currentPixel)
         {
-            double percentageChange = modificationSlider.Value / 100.0;
+            double percentageChange = modificationSlider.Value / 100.00;
             int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
-            int maxIndex = Array.IndexOf(rgbValue, rgbValue.Max());
-            int difference = rgbValue.Max() - rgbValue.Min();
-            difference = (int)(difference * percentageChange);
+            double totalValue = (rgbValue[0] + rgbValue[1] + rgbValue[2]) / 3;
 
             for (int value = 0; value < 3; value++)
+            {
+                if(rgbValue[value] == totalValue)
+                {
+                    if (totalValue < 85 && value == 2)
+                    {
+                        rgbValue[value] += (int)(rgbValue[value] * percentageChange);
+
+                    }
+                    else if (totalValue < 170 && value == 0)
+                    { 
+                        rgbValue[value] += (int)(rgbValue[value] * percentageChange);
+
+                    }
+                    else if(value == 1)
+                    {
+                        rgbValue[value] += (int)(rgbValue[value] * percentageChange);
+
+                    }
+                   
+
+                }
+                else  
+                    rgbValue[value] -= (int)Math.Round((totalValue - rgbValue[value]) * percentageChange);
+
+                if (rgbValue[value] > 255)
+                    rgbValue[value] = 255;
+
+                if (rgbValue[value] < 0)
+                    rgbValue[value] = 0;
+
+            }
+
+       //     int maxIndex = Array.IndexOf(rgbValue, rgbValue.Max());
+       //     int difference = rgbValue.Max() - rgbValue.Min();
+       //     difference = (int)(difference * percentageChange);
+
+         /*   for (int value = 0; value < 3; value++)
             {
                 if (value == maxIndex)
                 {
@@ -296,7 +429,8 @@ namespace Lab2_Jai_leaFranson
                     if (rgbValue[value] < 0)
                         rgbValue[value] = 0;
                 }
-            }
+            }*/
+            
 
             currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
 
@@ -361,13 +495,49 @@ namespace Lab2_Jai_leaFranson
         /*************************************************************
             6. Pixelizer
          ************************************************************/
-        private Color Pixelizer(Color currentPixel)
+        private void Pixelizer(int xPosition, int yPosition, ref Bitmap bitmap)
         {
-            int typeChange = modificationSlider.Value;
-            int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
+            Color averageColor;
+            int pixelSizeX = modificationSlider.Value;
+            int pixelSizeY = modificationSlider.Value; 
+            double[] rgbValue = { 0, 0, 0};
 
-            currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
-            return currentPixel;
+            if(xPosition + pixelSizeX > bitmap.Width)
+            {
+                pixelSizeX = bitmap.Width - xPosition;
+            }
+            if(yPosition + pixelSizeY > bitmap.Height)
+            {
+                pixelSizeY = bitmap.Height - yPosition;
+            }
+
+            for(int xLength = 0; xLength < pixelSizeX; xLength++)
+            {
+               for(int yLength = 0; yLength < pixelSizeY; yLength++)
+                {
+                    rgbValue[0] += bitmap.GetPixel(xPosition + xLength, yPosition + yLength).R;
+                    rgbValue[1] += bitmap.GetPixel(xPosition + xLength, yPosition + yLength).G;
+                    rgbValue[2] += bitmap.GetPixel(xPosition + xLength, yPosition + yLength).B;
+                }
+            }
+
+           
+            rgbValue[0] = rgbValue[0] / (pixelSizeX * pixelSizeY);
+            rgbValue[1] = rgbValue[1] / (pixelSizeX * pixelSizeY);
+            rgbValue[2] = rgbValue[2] / (pixelSizeX * pixelSizeY);
+           
+
+
+            averageColor = Color.FromArgb((int)rgbValue[0], (int)rgbValue[1], (int)rgbValue[2]);
+
+            for (int xLength = 0; xLength < pixelSizeX; xLength++)
+            {
+                for (int yLength = 0; yLength < pixelSizeY; yLength++)
+                {
+                    bitmap.SetPixel(xPosition + xLength, yPosition + yLength, averageColor);
+                }
+            }
+
         }
         /*************************************************************
             7. Scrambler Adjuster
@@ -410,8 +580,48 @@ namespace Lab2_Jai_leaFranson
          ************************************************************/
         private Color ColourFinder(Color currentPixel)
         {
-            int typeChange = modificationSlider.Value;
             int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
+            int colorToFind = (int)Math.Ceiling(modificationSlider.Value * 6 / 100.0);
+
+            switch(colorToFind)
+            {
+                case 1:
+                    rgbValue[1] -= 10;
+                    rgbValue[2] -= 10;
+                    //red
+                    break;
+                case 2:
+                    rgbValue[2] -= 10;
+                    //Yellow
+                    break;
+                case 3:
+                    rgbValue[0] -= 10;
+                    rgbValue[2] -= 10;
+                    //Green
+                    break;
+                case 4:
+                    rgbValue[0] -= 10;
+                    //cyan
+                    break;
+                case 5:
+                    rgbValue[0] -= 10;
+                    rgbValue[1] -= 10;
+                    //Blue
+                    break;
+                case 6:
+                    //Magenta
+                    rgbValue[1] -= 10;
+                    break;
+            }
+
+            if (rgbValue[0] < 0)
+                rgbValue[0] = 0;
+          
+            if (rgbValue[1] < 0)
+                rgbValue[1] = 0;
+          
+            if (rgbValue[2] < 0)
+                rgbValue[2] = 0;
 
             currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
             return currentPixel;
@@ -614,8 +824,25 @@ namespace Lab2_Jai_leaFranson
          ************************************************************/
         private Color ContrastReverser(Color currentPixel)
         {
-            int typeChange = modificationSlider.Value;
+            int percentageChange = modificationSlider.Value / 5;
             int[] rgbValue = { currentPixel.R, currentPixel.G, currentPixel.B };
+
+            for (int value = 0; value < rgbValue.Length; value++)
+            {
+                if (rgbValue[value] < 128)
+                {
+                    rgbValue[value] += percentageChange;
+                    if (rgbValue[value] > 255)
+                        rgbValue[value] = 255;
+                }
+                else if (rgbValue[value] > 128)
+                {
+                    rgbValue[value] -= percentageChange;
+                    if (rgbValue[value] < 0)
+                        rgbValue[value] = 0;
+                }
+
+            }
 
             currentPixel = Color.FromArgb(rgbValue[0], rgbValue[1], rgbValue[2]);
             return currentPixel;
