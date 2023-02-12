@@ -71,7 +71,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox.Location = new System.Drawing.Point(245, 15);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(1070, 636);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -82,7 +82,7 @@
             // 
             this.loadPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.loadPicture.Location = new System.Drawing.Point(15, 585);
-            this.loadPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loadPicture.Margin = new System.Windows.Forms.Padding(4);
             this.loadPicture.Name = "loadPicture";
             this.loadPicture.Size = new System.Drawing.Size(220, 42);
             this.loadPicture.TabIndex = 1;
@@ -113,9 +113,9 @@
             this.groupBox1.Controls.Add(this.bwRadio);
             this.groupBox1.Controls.Add(this.contrastRadio);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(220, 553);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -125,7 +125,7 @@
             // 
             this.BYcontrastRadio.AutoSize = true;
             this.BYcontrastRadio.Location = new System.Drawing.Point(7, 511);
-            this.BYcontrastRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BYcontrastRadio.Margin = new System.Windows.Forms.Padding(4);
             this.BYcontrastRadio.Name = "BYcontrastRadio";
             this.BYcontrastRadio.Size = new System.Drawing.Size(157, 20);
             this.BYcontrastRadio.TabIndex = 19;
@@ -138,7 +138,7 @@
             // 
             this.GMcontrastRadio.AutoSize = true;
             this.GMcontrastRadio.Location = new System.Drawing.Point(7, 482);
-            this.GMcontrastRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GMcontrastRadio.Margin = new System.Windows.Forms.Padding(4);
             this.GMcontrastRadio.Name = "GMcontrastRadio";
             this.GMcontrastRadio.Size = new System.Drawing.Size(180, 20);
             this.GMcontrastRadio.TabIndex = 18;
@@ -151,7 +151,7 @@
             // 
             this.contrastRevRadio.AutoSize = true;
             this.contrastRevRadio.Location = new System.Drawing.Point(7, 426);
-            this.contrastRevRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contrastRevRadio.Margin = new System.Windows.Forms.Padding(4);
             this.contrastRevRadio.Name = "contrastRevRadio";
             this.contrastRevRadio.Size = new System.Drawing.Size(136, 20);
             this.contrastRevRadio.TabIndex = 17;
@@ -164,7 +164,7 @@
             // 
             this.BYtintRadio.AutoSize = true;
             this.BYtintRadio.Location = new System.Drawing.Point(7, 369);
-            this.BYtintRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BYtintRadio.Margin = new System.Windows.Forms.Padding(4);
             this.BYtintRadio.Name = "BYtintRadio";
             this.BYtintRadio.Size = new System.Drawing.Size(130, 20);
             this.BYtintRadio.TabIndex = 16;
@@ -177,7 +177,7 @@
             // 
             this.RCcontrastRadio.AutoSize = true;
             this.RCcontrastRadio.Location = new System.Drawing.Point(7, 454);
-            this.RCcontrastRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RCcontrastRadio.Margin = new System.Windows.Forms.Padding(4);
             this.RCcontrastRadio.Name = "RCcontrastRadio";
             this.RCcontrastRadio.Size = new System.Drawing.Size(147, 20);
             this.RCcontrastRadio.TabIndex = 15;
@@ -190,7 +190,7 @@
             // 
             this.GMtintRadio.AutoSize = true;
             this.GMtintRadio.Location = new System.Drawing.Point(7, 341);
-            this.GMtintRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GMtintRadio.Margin = new System.Windows.Forms.Padding(4);
             this.GMtintRadio.Name = "GMtintRadio";
             this.GMtintRadio.Size = new System.Drawing.Size(153, 20);
             this.GMtintRadio.TabIndex = 14;
@@ -203,7 +203,7 @@
             // 
             this.RCtintRadio.AutoSize = true;
             this.RCtintRadio.Location = new System.Drawing.Point(7, 313);
-            this.RCtintRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RCtintRadio.Margin = new System.Windows.Forms.Padding(4);
             this.RCtintRadio.Name = "RCtintRadio";
             this.RCtintRadio.Size = new System.Drawing.Size(120, 20);
             this.RCtintRadio.TabIndex = 13;
@@ -216,7 +216,7 @@
             // 
             this.colorFinderRadio.AutoSize = true;
             this.colorFinderRadio.Location = new System.Drawing.Point(7, 256);
-            this.colorFinderRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorFinderRadio.Margin = new System.Windows.Forms.Padding(4);
             this.colorFinderRadio.Name = "colorFinderRadio";
             this.colorFinderRadio.Size = new System.Drawing.Size(108, 20);
             this.colorFinderRadio.TabIndex = 12;
@@ -228,9 +228,9 @@
             // brightnessRadio
             // 
             this.brightnessRadio.AutoSize = true;
-            this.brightnessRadio.ForeColor = System.Drawing.Color.Red;
+            this.brightnessRadio.ForeColor = System.Drawing.SystemColors.ControlText;
             this.brightnessRadio.Location = new System.Drawing.Point(7, 228);
-            this.brightnessRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.brightnessRadio.Margin = new System.Windows.Forms.Padding(4);
             this.brightnessRadio.Name = "brightnessRadio";
             this.brightnessRadio.Size = new System.Drawing.Size(91, 20);
             this.brightnessRadio.TabIndex = 11;
@@ -243,7 +243,7 @@
             // 
             this.pixelRadio.AutoSize = true;
             this.pixelRadio.Location = new System.Drawing.Point(8, 174);
-            this.pixelRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pixelRadio.Margin = new System.Windows.Forms.Padding(4);
             this.pixelRadio.Name = "pixelRadio";
             this.pixelRadio.Size = new System.Drawing.Size(78, 20);
             this.pixelRadio.TabIndex = 10;
@@ -255,9 +255,9 @@
             // colorEvenerRadio
             // 
             this.colorEvenerRadio.AutoSize = true;
-            this.colorEvenerRadio.ForeColor = System.Drawing.Color.Red;
+            this.colorEvenerRadio.ForeColor = System.Drawing.SystemColors.ControlText;
             this.colorEvenerRadio.Location = new System.Drawing.Point(9, 145);
-            this.colorEvenerRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorEvenerRadio.Margin = new System.Windows.Forms.Padding(4);
             this.colorEvenerRadio.Name = "colorEvenerRadio";
             this.colorEvenerRadio.Size = new System.Drawing.Size(113, 20);
             this.colorEvenerRadio.TabIndex = 9;
@@ -296,7 +296,7 @@
             // negativeRadio
             // 
             this.negativeRadio.AutoSize = true;
-            this.negativeRadio.ForeColor = System.Drawing.Color.Red;
+            this.negativeRadio.ForeColor = System.Drawing.SystemColors.ControlText;
             this.negativeRadio.Location = new System.Drawing.Point(8, 90);
             this.negativeRadio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.negativeRadio.Name = "negativeRadio";
@@ -312,7 +312,7 @@
             this.noiseRadio.AutoSize = true;
             this.noiseRadio.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.noiseRadio.Location = new System.Drawing.Point(8, 117);
-            this.noiseRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.noiseRadio.Margin = new System.Windows.Forms.Padding(4);
             this.noiseRadio.Name = "noiseRadio";
             this.noiseRadio.Size = new System.Drawing.Size(64, 20);
             this.noiseRadio.TabIndex = 5;
@@ -326,7 +326,7 @@
             this.tintRadio.AutoSize = true;
             this.tintRadio.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.tintRadio.Location = new System.Drawing.Point(7, 284);
-            this.tintRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tintRadio.Margin = new System.Windows.Forms.Padding(4);
             this.tintRadio.Name = "tintRadio";
             this.tintRadio.Size = new System.Drawing.Size(99, 20);
             this.tintRadio.TabIndex = 3;
@@ -340,7 +340,7 @@
             this.bwRadio.AutoSize = true;
             this.bwRadio.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.bwRadio.Location = new System.Drawing.Point(8, 37);
-            this.bwRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bwRadio.Margin = new System.Windows.Forms.Padding(4);
             this.bwRadio.Name = "bwRadio";
             this.bwRadio.Size = new System.Drawing.Size(102, 20);
             this.bwRadio.TabIndex = 4;
@@ -355,7 +355,7 @@
             this.contrastRadio.Checked = true;
             this.contrastRadio.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.contrastRadio.Location = new System.Drawing.Point(8, 398);
-            this.contrastRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contrastRadio.Margin = new System.Windows.Forms.Padding(4);
             this.contrastRadio.Name = "contrastRadio";
             this.contrastRadio.Size = new System.Drawing.Size(126, 20);
             this.contrastRadio.TabIndex = 2;
@@ -369,7 +369,7 @@
             this.modificationSlider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.modificationSlider.Location = new System.Drawing.Point(245, 694);
-            this.modificationSlider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modificationSlider.Margin = new System.Windows.Forms.Padding(4);
             this.modificationSlider.Maximum = 100;
             this.modificationSlider.Name = "modificationSlider";
             this.modificationSlider.Size = new System.Drawing.Size(1070, 56);
@@ -382,7 +382,7 @@
             this.transformBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.transformBtn.Enabled = false;
             this.transformBtn.Location = new System.Drawing.Point(16, 707);
-            this.transformBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.transformBtn.Margin = new System.Windows.Forms.Padding(4);
             this.transformBtn.Name = "transformBtn";
             this.transformBtn.Size = new System.Drawing.Size(220, 42);
             this.transformBtn.TabIndex = 7;
@@ -436,7 +436,7 @@
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar.Location = new System.Drawing.Point(245, 670);
-            this.progressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(1070, 16);
             this.progressBar.TabIndex = 8;
@@ -468,7 +468,7 @@
             this.Controls.Add(this.modificationSlider);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Lab 2 - Pic Bender";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
